@@ -13,7 +13,7 @@ api = Api(app)
 class PeopleCounter(Resource):
     def get(self):
         # load image
-        image = cv2.imread('ludzie.jpg')
+        image = cv2.imread('/data')
         image = cv2.resize(image, (700, 400))
 
 # detect people in the image
@@ -25,4 +25,4 @@ class PeopleCounter(Resource):
 api.add_resource(PeopleCounter, '/')
 
 if __name__ == '__main__':
-    pycodestyleapp.run(debug=True)
+    app.run(debug=True)
