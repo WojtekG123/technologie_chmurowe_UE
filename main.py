@@ -5,8 +5,8 @@ hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 # load image
-image = cv2.imread('5604cc5f87597_o_large.jpg')
-image = cv2.resize(image, (800, 800))
+image = cv2.imread('ludzie.jpg')
+image = cv2.resize(image, (1000, 700))
 
 # detect people in the image
 (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4), padding=(8, 8), scale=1.05)
@@ -20,3 +20,4 @@ print(f'Found {len(rects)} humans')
 # show the output images
 cv2.imshow("People detector", image)
 cv2.waitKey(0)
+
